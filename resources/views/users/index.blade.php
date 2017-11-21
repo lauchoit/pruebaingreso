@@ -11,8 +11,8 @@
 					<th> Nombre </th>
 					<th> Apellido </th>
 					<th> Email </th>
-					<th> Ver carros ..</th>
-					<th> Manejados </th>
+					<th> Carros Propios</th>
+					<th> Carros Manejados </th>
 					<th> Edit </th>
 				</tr>
 			</thead>
@@ -24,7 +24,7 @@
 					<td> {{ $user->lastName }} </td>
 					<td> {{ $user->email }} </td>
 					<td>
-						<a href="" class="btn btn-sm btn-outline-info btn-block">Ver</a>
+						<a href="{{ route('carro.show', $user->id) }}" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 					</td>
 					<td>
 						<a href="#" class="btn btn-sm btn-outline-success btn-block">Ver</a>

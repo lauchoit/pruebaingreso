@@ -63,7 +63,12 @@ class CarroController extends Controller
      */
     public function show($id)
     {
-        //
+        //dd($id);
+        $carros = Carro::where('user_id', $id)
+            ->get();
+
+        return view('carros.index')
+            ->with('carros', $carros);
     }
 
     /**

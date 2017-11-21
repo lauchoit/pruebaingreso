@@ -59,7 +59,14 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::select('*')
+            ->join('carros', 'carros.user_id', '=', 'users.id')
+            ->where('carros.id', $id)
+            ->get();
+
+        //dd($users);
+        return view('users.index')
+            ->with('users', $users);
     }
 
     /**
@@ -70,12 +77,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
         $user = User::find($id);
         return view('users.edit')
         ->with('user', $user);
 
-        
-    }
+         }
 
     /**
      * Update the specified resource in storage.

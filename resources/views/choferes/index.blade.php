@@ -24,7 +24,7 @@
 					<td> {{ $chofer->lastName }} </td>
 					<td> {{ $chofer->email }} </td>
 					<td>
-						<a href="#" class="btn btn-sm btn-outline-info btn-block">Ver</a>
+						<a href="{{ route('carro.edit', $chofer->id) }}" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 					</td>
 				</tr>
 				@endforeach

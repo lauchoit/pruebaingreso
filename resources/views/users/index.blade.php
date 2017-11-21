@@ -27,7 +27,7 @@
 						<a href="{{ route('carro.show', $user->id) }}" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 					</td>
 					<td>
-						<a href="#" class="btn btn-sm btn-outline-success btn-block">Ver</a>
+						<a href="{{ route('carro.edit', $user->id) }}" class="btn btn-sm btn-outline-success btn-block">Ver</a>
 					</td>
 					<td>
 						<a href="{{ route('usuario.edit', $user->id) }}" class="btn btn-sm btn-outline-danger btn-block">edit</a>

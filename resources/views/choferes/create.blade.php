@@ -11,7 +11,7 @@
 		  </div>
 		  <div class="form-group">
 		    {!! Form::label('carro_id', 'Seleccione el Carro a asignar:', []) !!}
-		    {!! Form::select('carro_id', $carros, null , ['class'=>"form-control", 'placeholder'=>'Seleccione el usuario']) !!}
+		    {!! Form::select('carro_id', $carross, null , ['class'=>"form-control", 'placeholder'=>'Seleccione el usuario']) !!}
 		  </div>
 		  
 		  <button type="submit" class="btn btn-outline-success">Registrar</button>

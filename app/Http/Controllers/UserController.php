@@ -87,6 +87,18 @@ class UserController extends Controller
             ->with('users', $users);
     }
 
+    public function editar($id)
+    {
+        $users = User::select('*')
+            ->join('choferes', 'choferes.user_id', '=', 'users.id')
+            ->where('choferes.carro_id', $id)
+            ->get();
+
+        //dd($users);
+        return view('users.index')
+            ->with('users', $users);
+    }
+
     /**
      * Update the specified resource in storage.
      *

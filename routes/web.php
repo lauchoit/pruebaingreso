@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::resource('usuario', 'UserController');
 Route::resource('carro', 'CarroController');
 Route::resource('chofer', 'ChoferController');
+Route::get('usuario/editar/{id}', [
+	'uses'	=>'UserController@editar',
+	'as'	=>'usuario.editar'
+]);

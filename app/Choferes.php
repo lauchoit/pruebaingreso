@@ -25,6 +25,6 @@ class Choferes extends Model
       }
     public function r_carro()
       {
-        return $this->belogsTo('App\Carro', 'carro_id', 'id');
+        return $this->belongsTo('App\Carro', 'carro_id', 'id');
       }
 }

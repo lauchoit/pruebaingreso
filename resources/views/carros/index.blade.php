@@ -16,7 +16,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@if ($carros->count() > 0)
+				@if (count($carros) > 0)
 					@foreach ($carros as $carro)
 					<tr>
 						<td>{{ $loop->iteration }}</td>
@@ -24,10 +24,10 @@
 						<td> {{ $carro->modelo }} </td>
 						<td> {{ $carro->placa }} </td>
 						<td>
-							<a href="#" class="btn btn-sm btn-outline-info btn-block">Ver</a>
+							<a href="{{ route('usuario.show', $carro->id) }}" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 						</td>
 						<td>
-							<a href="#" class="btn btn-sm btn-outline-success btn-block">Ver</a>
+							<a href="{{ route('usuario.edit', $carro->id) }}" class="btn btn-sm btn-outline-success btn-block">Ver</a>
 						</td>
 					</tr>
 					@endforeach

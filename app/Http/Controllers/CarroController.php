@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Carro;
 use App\User;
+use App\Choferes;
 use Illuminate\Support\Facades\DB;
 
 class CarroController extends Controller
@@ -79,7 +80,20 @@ class CarroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $choferes = Choferes::where('user_id', $id)
+            ->get();
+        //$carros[] = NULL;
+        //dd(count($choferes));
+        $carros = NULL;
+        foreach ($choferes as $key => $carro) {
+            $carro->r_carro;
+            $carros[$key] = $carro->r_carro;
+                //unset($choferes[$key]);  
+        }
+
+
+        return view('carros.index')
+            ->with('carros', $carros);
     }
 
     /**

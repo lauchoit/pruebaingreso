@@ -59,7 +59,14 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::select('*')
+            ->join('carros', 'carros.user_id', '=', 'users.id')
+            ->where('carros.id', $id)
+            ->get();
+
+        //dd($users);
+        return view('users.index')
+            ->with('users', $users);
     }
 
     /**
@@ -70,7 +77,14 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::select('*')
+            ->join('choferes', 'choferes.user_id', '=', 'users.id')
+            ->where('choferes.carro_id', $id)
+            ->get();
+
+        //dd($users);
+        return view('users.index')
+            ->with('users', $users);
     }
 
     /**

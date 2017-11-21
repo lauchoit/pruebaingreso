@@ -77,15 +77,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $users = User::select('*')
-            ->join('choferes', 'choferes.user_id', '=', 'users.id')
-            ->where('choferes.carro_id', $id)
-            ->get();
 
-        //dd($users);
-        return view('users.index')
-            ->with('users', $users);
-    }
+        $user = User::find($id);
+        return view('users.edit')
+        ->with('user', $user);
+
+         }
 
     public function editar($id)
     {
@@ -108,7 +105,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $user = User::find($id);
+        
+        $user->fill($request->all());
+        $user->save();
+
+        $mensaje = 'El usuario '.$user->name.' '.$user->apellido. ' '.$user->email. 'se actualizo correctamente';
+        $tipo   = 'alert-warning';
+
+        return redirect()->route('usuario.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
     }
 
     /**

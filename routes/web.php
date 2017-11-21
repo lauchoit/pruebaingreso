@@ -21,3 +21,4 @@ Route::get('usuario/editar/{id}', [
 	'uses'	=>'UserController@editar',
 	'as'	=>'usuario.editar'
 ]);
+

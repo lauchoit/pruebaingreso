@@ -30,7 +30,7 @@
 						<a href="{{ route('carro.edit', $user->id) }}" class="btn btn-sm btn-outline-success btn-block">Ver</a>
 					</td>
 					<td>
-						<a href="#" class="btn btn-sm btn-outline-danger btn-block">edit</a>
+						<a href="{{ route('usuario.edit', $user->id) }}" class="btn btn-sm btn-outline-danger btn-block">edit</a>
 					</td>
 				</tr>
 				@endforeach

@@ -8,7 +8,7 @@
         </p>
         <ul>
             <li>Un dueño puede tener muchos carros</li>
-            <li>Un carro tiene un solo ueño</li>
+            <li>Un carro tiene un solo dueño</li>
             <li>Un carro puede tener mucha choferes</li>
             <li>Un chofer puede tener un carro</li>
             <li>Un chofer puede manejar muchos carros</li>

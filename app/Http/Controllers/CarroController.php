@@ -47,7 +47,12 @@ class CarroController extends Controller
 
         $carro->save();
 
-        return redirect()->route('carro.index');
+        $mensaje = "El vehiculo se registro correctamente";
+        $tipo   = 'alert-success';
+
+        return redirect()->route('carro.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
     }
 
     /**

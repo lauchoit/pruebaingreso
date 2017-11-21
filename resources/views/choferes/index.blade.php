@@ -11,16 +11,16 @@
 					<th> Nombre </th>
 					<th> Apellido </th>
 					<th> Correo </th>
-					<th> Carros ... </th>
+					<th class="text-center"> Carros que maneja </th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($choferes as $carro)
+				@foreach ($choferes as $chofer)
 				<tr>
 					<td>{{ $loop->iteration }}</td>
-					<td> nada </td>
-					<td> nada </td>
-					<td> nada </td>
+					<td> {{ $chofer->name }} </td>
+					<td> {{ $chofer->lastName }} </td>
+					<td> {{ $chofer->email }} </td>
 					<td>
 						<a href="#" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 					</td>

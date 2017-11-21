@@ -43,7 +43,12 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('usuario.index');
+        $mensaje = "El usuario se registro correctamente";
+        $tipo   = 'alert-success';
+
+        return redirect()->route('usuario.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
     }
 
     /**

@@ -17,11 +17,16 @@ class ChoferController extends Controller
      */
     public function index()
     {
-        $choferes = Choferes::select('*')
-            ->get()
-            ->groupBy('user_id');
-        dd($choferes);
-        return view('choferes.index');
+        $choferes = User::select('*')
+            ->get();
+        foreach ($choferes as $key => $chofer) {
+            if( $chofer->r_choferes->isEmpty() ){
+                unset($choferes[$key]);  
+            }
+        }
+
+        return view('choferes.index')
+            ->with('choferes', $choferes);
     }
 
     /**
@@ -34,7 +39,7 @@ class ChoferController extends Controller
         $users = User::select(DB::raw('* ,CONCAT(name," ", lastName) AS nombrecompleto'))->pluck('nombrecompleto', 'id');
         $carros = Carro::select(DB::raw('* ,CONCAT(marca," ", modelo, " placa: ", placa) AS fullCar'))->pluck('fullCar', 'id');
 
-        return view('carros.create')
+        return view('choferes.create')
             ->with('users', $users)
             ->with('carros', $carros);
 
@@ -59,10 +64,19 @@ class ChoferController extends Controller
 
         $chof->save();
 
-        return redirect()->route('chofer.index');
+        $mensaje = "El vehiculo se asigno correctamente";
+        $tipo   = 'alert-success';
+
+        return redirect()->route('chofer.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
 
         }else{
-            dd('ya esta grabado este registro');
+            $mensaje = "El vehiculo ya se encuentra asignado a este conductor";
+            $tipo   = 'alert-danger';
+            return redirect()->route('chofer.index')
+                ->with('mensaje', $mensaje)
+                ->with('tipo', $tipo);
         }
     }
 

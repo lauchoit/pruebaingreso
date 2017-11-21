@@ -11,21 +11,33 @@
 					<th> Nombre </th>
 					<th> Apellido </th>
 					<th> Correo </th>
-					<th> Carros ... </th>
+					<th class="text-center"> Carros que maneja </th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($choferes as $carro)
+				@if ($choferes->count() > 0)
+					
+				@foreach ($choferes as $chofer)
 				<tr>
 					<td>{{ $loop->iteration }}</td>
-					<td> nada </td>
-					<td> nada </td>
-					<td> nada </td>
+					<td> {{ $chofer->name }} </td>
+					<td> {{ $chofer->lastName }} </td>
+					<td> {{ $chofer->email }} </td>
 					<td>
 						<a href="#" class="btn btn-sm btn-outline-info btn-block">Ver</a>
 					</td>
 				</tr>
 				@endforeach
+				@else
+					<tr>
+						<td colspan="5">
+							<div class="alert alert-info">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>No tiene registros</strong> no tiene conductores registrados...
+							</div>
+						</td>
+					</tr>
+				@endif
 			</tbody>
 		</table>
 	</div>

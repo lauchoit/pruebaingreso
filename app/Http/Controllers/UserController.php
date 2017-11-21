@@ -43,7 +43,12 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('usuario.index');
+        $mensaje = "El usuario se registro correctamente";
+        $tipo   = 'alert-success';
+
+        return redirect()->route('usuario.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
     }
 
     /**
@@ -65,7 +70,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.edit')
+        ->with('user', $user);
+
+        
     }
 
     /**
@@ -77,7 +86,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $user = User::find($id);
+        
+        $user->fill($request->all());
+        $user->save();
+
+        $mensaje = 'El usuario '.$user->name.' '.$user->apellido. ' '.$user->email. 'se actualizo correctamente';
+        $tipo   = 'alert-warning';
+
+        return redirect()->route('usuario.index')
+            ->with('mensaje', $mensaje)
+            ->with('tipo', $tipo);
     }
 
     /**

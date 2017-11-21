@@ -13,6 +13,7 @@
 					<th> Email </th>
 					<th> Ver carros ..</th>
 					<th> Manejados </th>
+					<th> Edit </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,9 @@
 					</td>
 					<td>
 						<a href="#" class="btn btn-sm btn-outline-success btn-block">Ver</a>
+					</td>
+					<td>
+						<a href="#" class="btn btn-sm btn-outline-danger btn-block">edit</a>
 					</td>
 				</tr>
 				@endforeach

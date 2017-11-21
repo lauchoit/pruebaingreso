@@ -19,15 +19,12 @@ class ChoferController extends Controller
     {
         $choferes = User::select('*')
             ->get();
-
         foreach ($choferes as $key => $chofer) {
-            
             if( $chofer->r_choferes->isEmpty() ){
                 unset($choferes[$key]);  
             }
         }
 
-        //dd($choferes);
         return view('choferes.index')
             ->with('choferes', $choferes);
     }

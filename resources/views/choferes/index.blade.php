@@ -15,6 +15,8 @@
 				</tr>
 			</thead>
 			<tbody>
+				@if ($choferes->count() > 0)
+					
 				@foreach ($choferes as $chofer)
 				<tr>
 					<td>{{ $loop->iteration }}</td>
@@ -26,6 +28,16 @@
 					</td>
 				</tr>
 				@endforeach
+				@else
+					<tr>
+						<td colspan="5">
+							<div class="alert alert-info">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>No tiene registros</strong> no tiene conductores registrados...
+							</div>
+						</td>
+					</tr>
+				@endif
 			</tbody>
 		</table>
 	</div>

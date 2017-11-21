@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','lastName', 'password',
     ];
 
     /**
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function r_carros()
+      {
+        return $this->hasMany('App\Carro', 'user_id', 'id');
+      }
+    public function r_choferes()
+      {
+        return $this->hasMany('App\Choferes', 'user_id', 'id');
+      }
 }

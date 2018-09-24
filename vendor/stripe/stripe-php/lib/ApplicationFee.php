@@ -5,6 +5,21 @@ namespace Stripe;
 /**
  * Class ApplicationFee
  *
+ * @property string $id
+ * @property string $object
+ * @property string $account
+ * @property int $amount
+ * @property int $amount_refunded
+ * @property string $application
+ * @property string $balance_transaction
+ * @property string $charge
+ * @property int $created
+ * @property string $currency
+ * @property bool $livemode
+ * @property string $originating_transaction
+ * @property bool $refunded
+ * @property Collection $refunds
+ *
  * @package Stripe
  */
 class ApplicationFee extends ApiResource
@@ -32,18 +47,6 @@ class ApplicationFee extends ApiResource
     public static function retrieve($id, $opts = null)
     {
         return self::_retrieve($id, $opts);
-    }
-
-    /**
-     * @param string $id The ID of the application fee to update.
-     * @param array|null $params
-     * @param array|string|null $options
-     *
-     * @return ApplicationFee The updated application fee.
-     */
-    public static function update($id, $params = null, $options = null)
-    {
-        return self::_update($id, $params, $options);
     }
 
     /**

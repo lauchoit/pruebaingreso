@@ -5,6 +5,24 @@ namespace Stripe;
 /**
  * Class Source
  *
+ * @property string $id
+ * @property string $object
+ * @property int $amount
+ * @property string $client_secret
+ * @property mixed $code_verification
+ * @property int $created
+ * @property string $currency
+ * @property string $flow
+ * @property bool $livemode
+ * @property AttachedObject $metadata
+ * @property mixed $owner
+ * @property mixed $receiver
+ * @property mixed $redirect
+ * @property string $statement_descriptor
+ * @property string $status
+ * @property string $type
+ * @property string $usage
+ *
  * @package Stripe
  */
 class Source extends ApiResource
@@ -19,17 +37,6 @@ class Source extends ApiResource
     public static function retrieve($id, $opts = null)
     {
         return self::_retrieve($id, $opts);
-    }
-
-    /**
-     * @param array|null $params
-     * @param array|string|null $opts
-     *
-     * @return Collection of Sources
-     */
-    public static function all($params = null, $opts = null)
-    {
-        return self::_all($params, $opts);
     }
 
     /**

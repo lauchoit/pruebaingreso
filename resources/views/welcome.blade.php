@@ -4,7 +4,8 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3">Ejemplo para realizar</h1>
-        <p class="lead">Este ejemplo cuenta con varias opciones q se deben realizar para su correcto finalizacion. Las mismas se emnumeran a continuacion: 
+        <p class="lead">Este ejemplo cuenta con varias opciones q se deben realizar para su correcto finalizacion. Las mismas se enumeran a continuacion: 
+            <pre style="color: red"> Tiene hasta el Viernes 28/09/2018 a las 4:00pm para entregar los resultados </pre>
         </p>
         <ul>
             <li>Un dueño puede tener muchos carros</li>

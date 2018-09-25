@@ -3,4 +3,5 @@
   <a class="nav-link @yield('marcadoUsuario')" href="{{ route('usuario.index') }}">Usuario</a>
   <a class="nav-link @yield('marcadoCarro')"  href="{{ route('carro.index') }}">Carro</a>
   <a class="nav-link @yield('marcadoChoferes')"  href="{{ route('chofer.index') }}" >Choferes</a>
+  <a class="nav-link @yield('marcadoTraspaso')"  href="{{ route('traspaso.index') }}" >Traspaso</a>
 </div>

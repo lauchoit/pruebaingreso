@@ -9,8 +9,8 @@
         <ul>
             <li>Un dueño puede tener muchos carros</li>
             <li>Un carro tiene un solo dueño</li>
-            <li>Un carro puede tener mucha choferes</li>
-            <li>Un chofer puede tener un carro</li>
+            <li>Un carro puede tener muchos choferes</li>
+            <li>un dueño puede traspasar un carro</li>
             <li>Un chofer puede manejar muchos carros</li>
         </ul>
         <p> <strong>NOTA:</strong> Evitar redundancia cuando se da un registro de alta en la base de datos</p>

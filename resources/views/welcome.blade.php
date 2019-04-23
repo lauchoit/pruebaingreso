@@ -5,7 +5,7 @@
       <div class="container">
         <h1 class="display-3">Ejemplo para realizar</h1>
         <p class="lead">Este ejemplo cuenta con varias opciones q se deben realizar para su correcto finalizacion. Las mismas se enumeran a continuacion: 
-            <pre style="color: red"> Tiene hasta el Martes 04/12/2018 a las 4:00pm para entregar los resultados </pre>
+            <pre style="color: red"> Tiene hasta el lunes 29/04/2019 a las 4:00PM para entregar los resultados </pre>
         </p>
         <ul>
             <li>Un dueño puede tener muchos carros</li>
